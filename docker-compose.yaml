@@ -1,0 +1,10 @@
+version: '3.3'
+services:
+  orderboardapp:
+    build:
+      dockerfile: Dockerfile
+      context: .
+      args:
+        JAR_FILE: build/libs/orderboard-0.0.1-SNAPSHOT.jar
+    ports:
+      - "8080:8080"

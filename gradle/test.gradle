@@ -1,0 +1,32 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+}
+
+dependencies {
+    testImplementation "org.springframework.boot:spring-boot-starter-test"
+    testImplementation "io.rest-assured:rest-assured"
+    testImplementation "org.hamcrest:hamcrest-core"
+    testImplementation "org.codehaus.groovy:groovy-all:3.0.13"
+    testImplementation "org.spockframework:spock-core:2.3-groovy-3.0"
+    testImplementation "org.spockframework:spock-spring:2.3-groovy-3.0"
+}
+
+sourceSets {
+    test.groovy.srcDirs(
+            "src/test/functional",
+            "src/test/integration",
+            "src/test/unit",
+            "src/test/commons"
+    )
+    test.resources.srcDirs(
+            "src/test/resources",
+    )
+}
+
+idea {
+    module {
+        test
+    }
+}
